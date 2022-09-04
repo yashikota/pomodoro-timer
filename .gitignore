@@ -354,3 +354,6 @@ MigrationBackup/
 
 # Except App Icon
 !*/App/icon.ico
+
+# Except Audio files
+!*/App/audio
