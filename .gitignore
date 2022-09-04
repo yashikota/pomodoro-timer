@@ -357,3 +357,6 @@ MigrationBackup/
 
 # Except Audio files
 !*/App/audio
+
+# Except Resource file
+!*/App/Resource.rc
