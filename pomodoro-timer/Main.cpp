@@ -11,7 +11,7 @@ void Main()
 	String text;
 	constexpr Rect area{ 50,400,700,170 };
 	const Audio audio{ U"audio/1.wav" };
-	Color stopwatchColor = ColorF{ 0.0 };
+	Color timerColor = ColorF{ 0.0 };
 	Scene::SetBackground(Palette::White);
 
 	while (System::Update())
@@ -28,7 +28,7 @@ void Main()
 			if (SimpleGUI::Button(labelStr, Vec2{ 650, 280 }, 100))
 			{
 				timer.start();
-				stopwatchColor = ColorF{ 0.0 };
+				timerColor = ColorF{ 0.0 };
 				labelStr = U"Pause";
 			}
 		}
@@ -38,14 +38,14 @@ void Main()
 			if (SimpleGUI::Button(labelStr, Vec2{ 650, 280 }, 100))
 			{
 				timer.pause();
-				stopwatchColor = ColorF{ 1.0, 0.0, 0.0 };
+				timerColor = ColorF{ 1.0, 0.0, 0.0 };
 				labelStr = U"Start";
 				audio.stop();
 			}
 		}
 
 		// Display timer
-		timerFont(timer.format(U"mm:ss")).draw(40, 150, stopwatchColor);
+		timerFont(timer.format(U"mm:ss")).draw(40, 150, timerColor);
 
 		// Display now status
 		regularFont(U"Now: {}"_fmt(now)).draw(50, 70, ColorF{0.0});
